@@ -1,7 +1,6 @@
 package levelPieces;
 
 import gameEngine.Drawable;
-import gameEngine.Moveable;
 
 /**
  * Gnome Piece Class
@@ -13,7 +12,6 @@ import gameEngine.Moveable;
 
 public class Gnome implements Drawable {
 	
-	private boolean center = true;
 	private char symbol;
 	public int location;
 
