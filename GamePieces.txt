@@ -2,30 +2,42 @@ Authors: Cale Waress and Natalie Kalin
 
 Game Pieces Description:
 
-	Ghost: This is both an interacting and moving piece. 
+	Ghost ('G'): This is both an interacting and moving piece. 
 	It moves around randomly using the Random number generator. 
 	If the player encounters the ghost, it takes a hit. 
 
-	Gnome: This is not a child of gamepiece. It only implements Drawable.
-	Moves using boolean logic (right 1, left 2, and vacillates between this.)
+	Gnome ('o'): This is not a child of gamepiece. It only implements Drawable.
+	It does not interact with the player. 
 	
-	Phoenix: This is a stationary gamepiece. It only interacts.
+	Phoenix ('X'): This is a stationary gamepiece. It only interacts.
 	When the player lands here, the player receives a point.
 	
-	Unicorn: This is both an interacting and moving piee.
-	Moves only to the right +3.
+	Unicorn ('U'): This is both an interacting and moving piece.
+	Moves only to the right +3 on every turn.
 	When the player lands on it, the player advances.
 	
-	Werewolf: This is a stationary gamepiece. It only interacts.
-	It "protects" the phoenix in the second level by killig the player if it  
+	Werewolf ('W'): This is a stationary gamepiece. It only interacts.
+	It "protects" the phoenix in the second level by killing the player if it  
 	is +/- 3 spaces away from the werewolf. 
 	
-
-	HIT: Ghost
-	NONE: Gnome
-	GET_POINT: Phoenix
-	ADVANCE: Unicorn
-	KILL: Werewolf
+	Gargoyle ('L'): This is a stationary gamepiece. It only interacts.
+	When the player lands one space away, the player receives a point.
+	
+	In summary: 
+	
+	5 pieces that interact:
+	HIT: Ghost [same square interaction]
+	GET_POINT: Gargoyle [interacts at a distance]
+	GET_POINT: Phoenix [same square interaction]
+	ADVANCE: Unicorn [same square interaction]
+	KILL: Werewolf [interacts at a distance]
+	
+	2 objects that move:
+	Unicorn - moves +3 each move 
+	Ghost: moves randomly around the board [random motion]
+	
+	1 piece that is only drawable:
+	Gnome
 
 
 	

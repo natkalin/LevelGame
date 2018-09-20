@@ -38,6 +38,7 @@ public class LevelEngine {
 	Ghost ghost = new Ghost('G', 5);
 	Gnome gnome1 = new Gnome('o',15);
 	Gnome gnome2 = new Gnome('o',15);
+	Gargoyle gargoyle = new Gargoyle('L', 7);
 	
 	/**
 	 * Creates two different levels for the game board based on the 5 pieces.
@@ -54,19 +55,18 @@ public class LevelEngine {
 		}
 		
 		//level 1
-		if(levelNum == 1)
+		if(levelNum == 1) //no werewolf on this level
 		{
 			interactingPieces.add(phoenix);
+			
+			interactingPieces.add(gargoyle);
 			
 			interactingPieces.add(unicorn);
 			movingPieces.add(unicorn);
 			
 			
 			interactingPieces.add(ghost);
-			movingPieces.add(ghost);
-			
-			movingPieces.add(gnome1);
-			
+			movingPieces.add(ghost);			
 			
 		} else { //level 2 
 			
@@ -76,13 +76,11 @@ public class LevelEngine {
 			interactingPieces.add(ghost);
 			movingPieces.add(ghost);
 			
-			movingPieces.add(gnome1);
-			movingPieces.add(gnome2);
 			gameBoard[gnome2.location] = gnome2;
 			
 		}	
 		
-		//sets locatio of all pieces except gnome
+		//sets location of all pieces except gnome
 		for(GamePiece piece : interactingPieces ) {
 			gameBoard[piece.getLocation()] = piece;
 		}

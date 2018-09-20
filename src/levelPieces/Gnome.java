@@ -11,7 +11,7 @@ import gameEngine.Moveable;
  * 
  */
 
-public class Gnome implements Moveable {
+public class Gnome implements Drawable {
 	
 	private boolean center = true;
 	private char symbol;
@@ -37,31 +37,5 @@ public class Gnome implements Moveable {
 	 */
 	public void draw() {
 		System.out.print(symbol);
-	}
-
-	/**
-	 * Moves the Gnome symbol on the board
-	 * 
-	 * Moves to the right 1, next turn moves to the left 2.
-	 * Vacillates between these two movements.
-	 * 
-	 */
-	public void move(Drawable[] gameBoard, int playerLocation) {
-		
-		gameBoard[location] = null;
-		
-		int newLocation = 0;
-		
-		if (center == true) {
-			newLocation = location + 1 ;
-			center = false;
-		} else {
-			newLocation = location -2;
-		}
-				
-		gameBoard[newLocation] = this;
-	
-		location = newLocation;	
-	}
-	
+	}	
 }

@@ -53,9 +53,14 @@ public class Ghost extends GamePiece implements Moveable{
 	public void move(Drawable[] gameBoard, int playerLocation) {
 		
 		gameBoard[super.getLocation()] = null;
-		
 		int newLocation = randm.nextInt(GameEngine.BOARD_SIZE);
 		
+		//ensure it does not land on werewolf, phoenix, or gargoyle pieces
+		while(newLocation == 2 && newLocation == 3 && newLocation == 7)
+		{
+			newLocation = randm.nextInt(GameEngine.BOARD_SIZE);
+		}
+			
 		gameBoard[newLocation] = this;
 	
 		super.setLocation(newLocation);	
