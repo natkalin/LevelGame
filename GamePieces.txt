@@ -1,0 +1,31 @@
+Authors: Cale Waress and Natalie Kalin
+
+Game Pieces Description:
+
+	Ghost: This is both an interacting and moving piece. 
+	It moves around randomly using the Random number generator. 
+	If the player encounters the ghost, it takes a hit. 
+
+	Gnome: This is not a child of gamepiece. It only implements Drawable.
+	Moves using boolean logic (right 1, left 2, and vacillates between this.)
+	
+	Phoenix: This is a stationary gamepiece. It only interacts.
+	When the player lands here, the player receives a point.
+	
+	Unicorn: This is both an interacting and moving piee.
+	Moves only to the right +3.
+	When the player lands on it, the player advances.
+	
+	Werewolf: This is a stationary gamepiece. It only interacts.
+	It "protects" the phoenix in the second level by killig the player if it  
+	is +/- 3 spaces away from the werewolf. 
+	
+
+	HIT: Ghost
+	NONE: Gnome
+	GET_POINT: Phoenix
+	ADVANCE: Unicorn
+	KILL: Werewolf
+
+
+	
